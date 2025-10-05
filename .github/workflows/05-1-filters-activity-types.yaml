@@ -1,0 +1,13 @@
+name: 05-1-Event Filters and Activity Types
+on:
+    pull_request:
+        types: [opened, synchronize] #this is activity types like open , closed , labeled, assigned etc
+        branches: #this acts as filter like branch_ignore, paths or paths_ignore etc
+            - main
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: PR opened or sync 
+              run: echo "Running whenever a PR is opened or synchronised And Base Branch is main"
